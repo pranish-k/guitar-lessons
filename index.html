@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GUITAR ROADMAP | 12-Week Theory & Practice</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Permanent+Marker&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <!-- LOADING SCREEN -->
+  <div id="loading-screen" class="loading-screen">
+    <div class="loading-content">
+      <div class="loading-strings">
+        <span></span><span></span><span></span><span></span><span></span><span></span>
+      </div>
+      <p class="loading-text">Tuning up...</p>
+    </div>
+  </div>
+
+  <!-- HEADER -->
+  <header class="site-header">
+    <div class="header-inner">
+      <button id="nav-home" class="logo-btn" title="Back to Dashboard">
+        <span class="logo-icon">&#9835;</span>
+        <span class="logo-text">GUITAR ROADMAP</span>
+      </button>
+      <div class="header-controls">
+        <div class="search-box" id="search-box">
+          <input type="text" id="search-input" placeholder="Search lessons..." autocomplete="off">
+          <div class="search-results" id="search-results"></div>
+        </div>
+        <button id="theme-toggle" class="amp-switch" title="Toggle theme">
+          <span class="switch-label">AMP</span>
+          <span class="switch-track"><span class="switch-knob"></span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- BREADCRUMBS -->
+  <nav id="breadcrumbs" class="breadcrumbs hidden">
+    <span class="crumb" data-view="dashboard">Dashboard</span>
+  </nav>
+
+  <!-- MAIN CONTENT -->
+  <main id="app">
+
+    <!-- DASHBOARD VIEW -->
+    <section id="dashboard-view" class="view">
+      <!-- Overall Progress -->
+      <div class="dashboard-hero">
+        <h1 class="hero-title">YOUR 12-WEEK<br>GUITAR ROADMAP</h1>
+        <p class="hero-subtitle">From Intermediate Player to Music Theory Literate</p>
+        <div class="overall-progress">
+          <div class="progress-stats">
+            <div class="stat">
+              <span class="stat-value" id="stat-completed">0</span>
+              <span class="stat-label">Completed</span>
+            </div>
+            <div class="stat">
+              <span class="stat-value" id="stat-hours">0h</span>
+              <span class="stat-label">Practice Time</span>
+            </div>
+            <div class="stat">
+              <span class="stat-value" id="stat-percent">0%</span>
+              <span class="stat-label">Progress</span>
+            </div>
+          </div>
+          <div class="guitar-neck-progress" id="neck-progress">
+            <div class="neck-track">
+              <div class="neck-fill" id="neck-fill"></div>
+              <div class="fret-markers">
+                <span class="fret-dot" data-week="1"></span>
+                <span class="fret-dot" data-week="2"></span>
+                <span class="fret-dot" data-week="3"></span>
+                <span class="fret-dot" data-week="4"></span>
+                <span class="fret-dot" data-week="5"></span>
+                <span class="fret-dot" data-week="6"></span>
+                <span class="fret-dot" data-week="7"></span>
+                <span class="fret-dot" data-week="8"></span>
+                <span class="fret-dot" data-week="9"></span>
+                <span class="fret-dot" data-week="10"></span>
+                <span class="fret-dot" data-week="11"></span>
+                <span class="fret-dot" data-week="12"></span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Phase Filters -->
+      <div class="phase-filters">
+        <button class="phase-tab active" data-phase="all">All Weeks</button>
+        <button class="phase-tab phase-1" data-phase="1">Phase 1: Foundations</button>
+        <button class="phase-tab phase-2" data-phase="2">Phase 2: Harmony</button>
+        <button class="phase-tab phase-3" data-phase="3">Phase 3: Application</button>
+      </div>
+
+      <!-- Week Cards Grid -->
+      <div class="weeks-grid" id="weeks-grid">
+        <!-- Populated by JS -->
+      </div>
+    </section>
+
+    <!-- WEEK DETAIL VIEW -->
+    <section id="week-view" class="view hidden">
+      <div class="week-header" id="week-header">
+        <div class="week-nav">
+          <button id="prev-week" class="nav-arrow" title="Previous week">&larr; Prev</button>
+          <button id="back-to-dash" class="back-btn">Back to Dashboard</button>
+          <button id="next-week" class="nav-arrow" title="Next week">Next &rarr;</button>
+        </div>
+        <div class="week-title-area">
+          <span class="week-badge" id="week-badge">WEEK 1</span>
+          <h2 class="week-title" id="week-title">Title</h2>
+          <p class="week-intro" id="week-intro"></p>
+        </div>
+        <div class="week-progress-bar">
+          <div class="week-progress-fill" id="week-progress-fill"></div>
+          <span class="week-progress-text" id="week-progress-text">0%</span>
+        </div>
+      </div>
+
+      <!-- Week Content Sections -->
+      <div class="week-content" id="week-content">
+        <!-- Populated by JS -->
+      </div>
+
+      <!-- Practice Session Logger -->
+      <div class="practice-logger" id="practice-logger">
+        <h3 class="section-title logger-title">
+          <span class="title-icon">&#9210;</span> Practice Sessions
+        </h3>
+        <div class="logger-form">
+          <div class="form-row">
+            <label>
+              <span>Date</span>
+              <input type="date" id="session-date">
+            </label>
+            <label>
+              <span>Duration (min)</span>
+              <input type="number" id="session-duration" value="90" min="1" max="480">
+            </label>
+            <label>
+              <span>Session Type</span>
+              <select id="session-type">
+                <option value="Session 1">Session 1</option>
+                <option value="Session 2">Session 2</option>
+                <option value="Session 3">Session 3</option>
+                <option value="Free Practice">Free Practice</option>
+              </select>
+            </label>
+            <button id="log-session" class="record-btn" title="Log session">&#9679; REC</button>
+          </div>
+        </div>
+        <div class="session-history" id="session-history">
+          <!-- Populated by JS -->
+        </div>
+      </div>
+
+      <!-- Notes Section -->
+      <div class="notes-section" id="notes-section">
+        <h3 class="section-title notes-title">
+          <span class="title-icon">&#9998;</span> Practice Journal
+        </h3>
+        <textarea id="week-notes" class="notes-textarea" placeholder="Write your observations, difficulties, breakthroughs..."></textarea>
+        <div class="notes-footer">
+          <span class="save-indicator" id="save-indicator">Saved</span>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- EXPORT/IMPORT MODAL -->
+  <div id="data-modal" class="modal hidden">
+    <div class="modal-content">
+      <h3>Data Management</h3>
+      <div class="modal-actions">
+        <button id="export-btn" class="modal-btn">Export Progress</button>
+        <button id="import-btn" class="modal-btn">Import Progress</button>
+        <button id="clear-btn" class="modal-btn danger">Clear All Data</button>
+      </div>
+      <input type="file" id="import-file" accept=".json" style="display:none">
+      <button class="modal-close" id="modal-close">&times;</button>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <p class="footer-quote">"Music theory is a tool, not a cage."</p>
+      <div class="footer-actions">
+        <button id="data-mgmt-btn" class="footer-btn">Manage Data</button>
+      </div>
+      <p class="footer-credit">4 hours/week &middot; 12 weeks &middot; Your guitar journey</p>
+    </div>
+  </footer>
+
+  <script src="js/data.js"></script>
+  <script src="js/storage.js"></script>
+  <script src="js/ui.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
