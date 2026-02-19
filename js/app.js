@@ -69,8 +69,6 @@ window.App = (function () {
   // ── Init ───────────────────────────────────────────────────────────────────
 
   function init() {
-    UI.initSearch();
-
     // Phase filter tabs
     document.querySelectorAll('.phase-tab').forEach(tab => {
       tab.addEventListener('click', () => {

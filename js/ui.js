@@ -20,6 +20,7 @@ window.UI = (function () {
       const card = document.createElement('div');
       card.className = 'week-card phase-' + week.phase;
       card.setAttribute('data-week', week.id);
+      card.setAttribute('data-phase', week.phase);
       card.style.animationDelay = (i * 0.06) + 's';
 
       card.innerHTML = `
