@@ -156,17 +156,6 @@ window.Storage = (function () {
     return sessions.reduce((sum, s) => sum + (s.duration || 0), 0);
   }
 
-  function getTheme() {
-    const data = load();
-    return data.settings.theme || 'dark';
-  }
-
-  function setTheme(theme) {
-    const data = load();
-    data.settings.theme = theme;
-    save(data);
-  }
-
   function exportData() {
     const data = load();
     const blob = new Blob([JSON.stringify(data, null, 2)], { type: 'application/json' });
@@ -205,6 +194,6 @@ window.Storage = (function () {
     load, save, getWeekData, toggleCheckpoint, setCheckpoint,
     isCheckpointDone, saveNotes, getNotes, addSession, removeSession,
     getSessions, getWeekProgress, getOverallProgress, getTotalPracticeTime,
-    getWeekPracticeTime, getTheme, setTheme, exportData, importData, clearAll
+    getWeekPracticeTime, exportData, importData, clearAll
   };
 })();

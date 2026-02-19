@@ -82,6 +82,10 @@ window.UI = (function () {
     document.getElementById('week-title').textContent = week.title;
     document.getElementById('week-intro').textContent = week.whatYoullLearn || '';
 
+    // Sticky nav title
+    const navTitle = document.getElementById('week-nav-title');
+    if (navTitle) navTitle.textContent = 'WEEK ' + week.id;
+
     // Progress
     const progress = window.Storage.getWeekProgress(weekId);
     document.getElementById('week-progress-fill').style.width = progress.percent + '%';
