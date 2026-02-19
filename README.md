@@ -11,8 +11,6 @@ A 12-week interactive guitar learning roadmap with progress tracking, practice s
 - 12 weeks of structured theory and guitar application content
 - Progress tracking with checkpoints saved to localStorage
 - Practice session logger with stopwatch
-- Searchable content across all weeks and sections
-- Hash-based URLs — each week has its own link and browser back/forward works
 
 ## Running Locally
 
