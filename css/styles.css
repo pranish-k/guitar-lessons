@@ -272,7 +272,7 @@ html {
 }
 .logo-icon {
   font-size: 1.6rem;
-  filter: brightness(0) saturate(100%) invert(80%) sepia(60%) saturate(500%) hue-rotate(5deg) brightness(1.05);
+  filter: brightness(0) saturate(100%) invert(55%) sepia(90%) saturate(600%) hue-rotate(10deg) brightness(0.95);
   line-height: 1;
 }
 .logo-text {
