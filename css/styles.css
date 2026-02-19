@@ -773,7 +773,6 @@ html {
   text-align: center;
   padding: var(--space-2xl) var(--space-lg) var(--space-xl);
   position: relative;
-  border-bottom: 1px solid var(--border-color);
   margin-bottom: var(--space-2xl);
   background:
     radial-gradient(ellipse at 50% 20%, rgba(217,119,6,.06) 0%, transparent 60%);
@@ -822,6 +821,7 @@ html {
 #next-week { justify-self: end; }
 
 .week-title-area {
+  margin-top: var(--space-xl);
   margin-bottom: var(--space-lg);
 }
 
@@ -977,7 +977,7 @@ html {
 
 .section-title-text {
   font-family: var(--font-accent);
-  font-size: 1rem;
+  font-size: 1.1rem;
   font-weight: 600;
   color: #292524;
   flex: 1;
@@ -1017,7 +1017,7 @@ html {
 /* Content typography within sections */
 .section-body h4 {
   font-family: var(--font-accent);
-  font-size: 1rem;
+  font-size: 1.1rem;
   color: #44403c;
   margin: var(--space-lg) 0 var(--space-sm);
 }
@@ -1027,7 +1027,7 @@ html {
 
 .section-body p,
 .section-body li {
-  font-size: 0.9rem;
+  font-size: 1rem;
   color: #44403c;
   line-height: 1.7;
 }
@@ -1041,6 +1041,36 @@ html {
 }
 .section-body li::marker {
   color: var(--orange);
+}
+
+/* Checkpoint items inside section */
+.checkpoint-item {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-sm);
+  padding: var(--space-sm) 0;
+  border-bottom: 1px solid rgba(0,0,0,.07);
+  cursor: pointer;
+}
+.checkpoint-item:last-child {
+  border-bottom: none;
+}
+.checkpoint-item input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+  margin-top: 2px;
+  accent-color: var(--orange);
+  cursor: pointer;
+}
+.checkpoint-item .check-text {
+  font-size: 1rem;
+  color: #44403c;
+  line-height: 1.5;
+}
+.checkpoint-item.checked .check-text {
+  text-decoration: line-through;
+  opacity: 0.5;
 }
 
 

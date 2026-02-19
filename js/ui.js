@@ -186,8 +186,6 @@ window.UI = (function () {
     // Render sessions
     renderSessions(weekId);
 
-    // Breadcrumbs
-    updateBreadcrumbs(week);
   }
 
   function updateWeekProgress(weekId) {
@@ -231,23 +229,6 @@ window.UI = (function () {
         renderSessions(wk);
         updateDashboardStats();
       });
-    });
-  }
-
-  function updateBreadcrumbs(week) {
-    const bc = document.getElementById('breadcrumbs');
-    if (!bc) return;
-    const phase = window.ROADMAP_DATA.phases.find(p => p.weeks.includes(week.id));
-    bc.innerHTML = `
-      <span class="crumb clickable" data-view="dashboard">Dashboard</span>
-      <span class="crumb-sep">&rsaquo;</span>
-      <span class="crumb">${phase ? 'Phase ' + phase.id : ''}</span>
-      <span class="crumb-sep">&rsaquo;</span>
-      <span class="crumb active">Week ${week.id}</span>
-    `;
-    bc.classList.remove('hidden');
-    bc.querySelector('.clickable').addEventListener('click', () => {
-      window.App.showDashboard();
     });
   }
 
