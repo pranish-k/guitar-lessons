@@ -888,7 +888,7 @@ html {
 
 .week-title {
   font-family: var(--font-display);
-  font-size: clamp(2rem, 5vw, 3rem);
+  font-size: clamp(2.8rem, 6vw, 4.5rem);
   letter-spacing: 0.04em;
   color: var(--text-primary);
   text-shadow: 1px 1px 0 rgba(217,119,6,.1);
