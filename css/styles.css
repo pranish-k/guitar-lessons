@@ -1632,27 +1632,14 @@ pre.guitar-tab,
 .site-footer {
   background: var(--charcoal);
   border-top: 1px solid var(--border-color);
-  padding: var(--space-2xl) var(--space-lg);
+  padding: var(--space-md) var(--space-lg);
   text-align: center;
-  /* Subtle worn texture */
-  background-image:
-    repeating-linear-gradient(
-      90deg,
-      transparent,
-      transparent 3px,
-      rgba(255,255,255,.006) 3px,
-      rgba(255,255,255,.006) 6px
-    );
 }
 
 
 .footer-inner {
   max-width: var(--max-width);
   margin: 0 auto;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: var(--space-md);
 }
 
 .footer-copyright {

@@ -144,43 +144,6 @@ window.App = (function () {
       swStopBtn.disabled = true;
     });
 
-    // Data management
-    document.getElementById('data-mgmt-btn').addEventListener('click', () => {
-      document.getElementById('data-modal').classList.remove('hidden');
-    });
-    document.getElementById('modal-close').addEventListener('click', () => {
-      document.getElementById('data-modal').classList.add('hidden');
-    });
-    document.getElementById('export-btn').addEventListener('click', () => {
-      window.Storage.exportData();
-    });
-    document.getElementById('import-btn').addEventListener('click', () => {
-      document.getElementById('import-file').click();
-    });
-    document.getElementById('import-file').addEventListener('change', async (e) => {
-      const file = e.target.files[0];
-      if (!file) return;
-      try {
-        await window.Storage.importData(file);
-        location.reload();
-      } catch (err) {
-        alert('Failed to import: ' + err.message);
-      }
-    });
-    document.getElementById('clear-btn').addEventListener('click', () => {
-      if (confirm('Clear ALL progress? This cannot be undone.')) {
-        window.Storage.clearAll();
-        location.reload();
-      }
-    });
-
-    // Close modal on backdrop click
-    document.getElementById('data-modal').addEventListener('click', (e) => {
-      if (e.target.id === 'data-modal') {
-        document.getElementById('data-modal').classList.add('hidden');
-      }
-    });
-
     // Hash-based routing
     window.addEventListener('hashchange', navigate);
     navigate(); // render based on current URL hash on load
